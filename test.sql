@@ -1,0 +1,1 @@
+SELECT DISTINCT u.first_name, u.last_name ,r.message FROM users as u LEFT OUTER JOIN messages AS s ON (u.id = s.sender_id) LEFT OUTER JOIN messages AS r ON (u.id = r.receiver_id) WHERE NOT (u.id = 1) AND (r.sender_id = 1 OR r.receiver_id = 1 OR s.sender_id = 1 OR s.receiver_id = 1)
